@@ -23,24 +23,51 @@ export default class ApplicationController extends Controller {
     ],
   };
   @tracked chartID = 0;
-
+  @tracked chartDescription = 0;
   async init() {
     super.init(...arguments);
     await this.loadData();
-    let datasets = this.chart.countOccurrences(this.incidents, 'severity');
-    const currentChartId = 1;
-    const chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
-      (obj) => obj.id === currentChartId,
-    );
-    this.options = this.chart.generateChartOptions(
-      chartMetaDetails.chartType,
-      chartMetaDetails.xAxisLabel,
-      chartMetaDetails.yAxisLabel,
-      Object.keys(datasets),
-      Object.values(datasets),
-    );
-    this.chartID = currentChartId;
-    console.log(this.options);
+    const currentChartId = 2;
+    let chartMetaDetails = {};
+    let chartData = {};
+    switch (currentChartId) {
+      case 1:
+        chartData = this.chart.countOccurrences(this.incidents, 'severity');
+        chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
+          (obj) => obj.id === currentChartId,
+        );
+        this.options = this.chart.generateBarChartOptions(
+          chartMetaDetails.chartType,
+          chartMetaDetails.xAxisLabel,
+          chartMetaDetails.yAxisLabel,
+          Object.keys(chartData),
+          Object.values(chartData),
+        );
+        this.chartID = currentChartId;
+        this.chartDescription = chartMetaDetails.chartDescription;
+        // console.log(this.options);
+        break;
+      case 2:
+        chartData = this.chart.countOccurrences(this.incidents, 'incidentKind');
+        chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
+          (obj) => obj.id === currentChartId,
+        );
+        chartData = Object.entries(chartData).map(([name, value]) => ({
+            name,
+            value,
+          }));
+        this.options = this.chart.generatePieChartOptions(chartData, chartMetaDetails.chartName);
+        console.log(chartData);
+        this.chartID = currentChartId;
+        this.chartDescription = chartMetaDetails.chartDescription;
+        // const resultArray = Object.entries(incidentKindCounts).map(([name, value]) => ({
+        //   name,
+        //   value,
+        // }));
+        break;
+      default:
+        break;
+    }
   }
 
   async loadData() {
