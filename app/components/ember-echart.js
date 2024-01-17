@@ -3,7 +3,7 @@ import Component from '@ember/component';
 import echarts from 'echarts';
 
 export default Component.extend({
-  didInsertElement() {
+  didUpdateAttrs() {
     this._super(...arguments);
     const dom = document.getElementById('echart');
     const myChart = echarts.init(dom, null, {
