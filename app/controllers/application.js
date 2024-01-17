@@ -1,5 +1,8 @@
 import Controller from '@ember/controller';
+import { service } from '@ember/service';
+import { SAFETY_INCIDENT_CHARTS } from '../utils/constants';
 export default class ApplicationController extends Controller {
+  @service('chart-info-constructor') chart;
   incidents = [];
   options = {
     xAxis: {
@@ -16,12 +19,24 @@ export default class ApplicationController extends Controller {
         data: [820, 932, 901, 934, 1290, 1330, 1320],
         type: 'bar',
       },
-    ],
-  };
+    ],};
 
   async init() {
     super.init(...arguments);
     await this.loadData();
+    let datasets = this.chart.countOccurrences(this.incidents, 'severity');
+    const currentChartId = 1;
+    const chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
+      (obj) => obj.id === currentChartId,
+    );
+    this.options = this.chart.generateChartOptions(
+      chartMetaDetails.chartType,
+      chartMetaDetails.xAxisLabel,
+      chartMetaDetails.yAxisLabel,
+      Object.keys(datasets),
+      Object.values(datasets),
+    );
+    console.log(this.options);
   }
 
   async loadData() {
