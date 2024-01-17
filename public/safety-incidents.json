@@ -1,0 +1,502 @@
+[
+    {
+        "datetime": "2024-01-07 07:20:11",
+        "severity": 3,
+        "cost": 2304.1,
+        "incidentKind": "Good Catch",
+        "jobName": "Job E",
+        "foreman": "Foreman B",
+        "description": "Description for incident 1",
+        "comment": "Comment for incident 1"
+    },
+    {
+        "datetime": "2024-01-08 16:31:18",
+        "severity": 5,
+        "cost": 4279.17,
+        "incidentKind": "Near Miss",
+        "jobName": "Job A",
+        "foreman": "Foreman D",
+        "description": "Description for incident 2",
+        "comment": "Comment for incident 2"
+    },
+    {
+        "datetime": "2024-01-04 20:27:46",
+        "severity": 5,
+        "cost": 2579.76,
+        "incidentKind": "Injury",
+        "jobName": "Job E",
+        "foreman": "Foreman E",
+        "description": "Description for incident 3",
+        "comment": "Comment for incident 3"
+    },
+    {
+        "datetime": "2024-01-04 13:28:47",
+        "severity": 1,
+        "cost": 3247.8,
+        "incidentKind": "Near Miss",
+        "jobName": "Job A",
+        "foreman": "Foreman D",
+        "description": "Description for incident 4",
+        "comment": "Comment for incident 4"
+    },
+    {
+        "datetime": "2024-01-08 00:54:22",
+        "severity": 4,
+        "cost": 1666.26,
+        "incidentKind": "Near Miss",
+        "jobName": "Job C",
+        "foreman": "Foreman C",
+        "description": "Description for incident 5",
+        "comment": "Comment for incident 5"
+    },
+    {
+        "datetime": "2024-01-14 02:41:02",
+        "severity": 5,
+        "cost": 1476.63,
+        "incidentKind": "Near Miss",
+        "jobName": "Job A",
+        "foreman": "Foreman C",
+        "description": "Description for incident 6",
+        "comment": "Comment for incident 6"
+    },
+    {
+        "datetime": "2024-01-02 15:46:45",
+        "severity": 1,
+        "cost": 2907.76,
+        "incidentKind": "Near Miss",
+        "jobName": "Job B",
+        "foreman": "Foreman E",
+        "description": "Description for incident 7",
+        "comment": "Comment for incident 7"
+    },
+    {
+        "datetime": "2024-01-04 13:25:14",
+        "severity": 3,
+        "cost": 4143.89,
+        "incidentKind": "Damage",
+        "jobName": "Job D",
+        "foreman": "Foreman D",
+        "description": "Description for incident 8",
+        "comment": "Comment for incident 8"
+    },
+    {
+        "datetime": "2024-01-04 18:28:31",
+        "severity": 2,
+        "cost": 603.76,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job E",
+        "foreman": "Foreman E",
+        "description": "Description for incident 9",
+        "comment": "Comment for incident 9"
+    },
+    {
+        "datetime": "2024-01-11 18:09:37",
+        "severity": 1,
+        "cost": 2537.07,
+        "incidentKind": "Damage",
+        "jobName": "Job E",
+        "foreman": "Foreman D",
+        "description": "Description for incident 10",
+        "comment": "Comment for incident 10"
+    },
+    {
+        "datetime": "2024-01-14 13:17:18",
+        "severity": 1,
+        "cost": 3018.59,
+        "incidentKind": "Damage",
+        "jobName": "Job C",
+        "foreman": "Foreman C",
+        "description": "Description for incident 11",
+        "comment": "Comment for incident 11"
+    },
+    {
+        "datetime": "2024-01-01 23:12:38",
+        "severity": 2,
+        "cost": 1257.55,
+        "incidentKind": "Damage",
+        "jobName": "Job B",
+        "foreman": "Foreman E",
+        "description": "Description for incident 12",
+        "comment": "Comment for incident 12"
+    },
+    {
+        "datetime": "2024-01-01 17:31:44",
+        "severity": 2,
+        "cost": 2214.67,
+        "incidentKind": "Damage",
+        "jobName": "Job C",
+        "foreman": "Foreman E",
+        "description": "Description for incident 13",
+        "comment": "Comment for incident 13"
+    },
+    {
+        "datetime": "2024-01-04 21:01:39",
+        "severity": 1,
+        "cost": 588.36,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job E",
+        "foreman": "Foreman B",
+        "description": "Description for incident 14",
+        "comment": "Comment for incident 14"
+    },
+    {
+        "datetime": "2024-01-12 16:56:40",
+        "severity": 2,
+        "cost": 1474.12,
+        "incidentKind": "Injury",
+        "jobName": "Job C",
+        "foreman": "Foreman B",
+        "description": "Description for incident 15",
+        "comment": "Comment for incident 15"
+    },
+    {
+        "datetime": "2024-01-10 04:21:00",
+        "severity": 4,
+        "cost": 838.88,
+        "incidentKind": "Good Catch",
+        "jobName": "Job C",
+        "foreman": "Foreman B",
+        "description": "Description for incident 16",
+        "comment": "Comment for incident 16"
+    },
+    {
+        "datetime": "2024-01-05 18:35:37",
+        "severity": 1,
+        "cost": 336.94,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job D",
+        "foreman": "Foreman D",
+        "description": "Description for incident 17",
+        "comment": "Comment for incident 17"
+    },
+    {
+        "datetime": "2024-01-02 23:47:10",
+        "severity": 1,
+        "cost": 4821.16,
+        "incidentKind": "Near Miss",
+        "jobName": "Job E",
+        "foreman": "Foreman B",
+        "description": "Description for incident 18",
+        "comment": "Comment for incident 18"
+    },
+    {
+        "datetime": "2024-01-14 08:59:31",
+        "severity": 1,
+        "cost": 4408.48,
+        "incidentKind": "Damage",
+        "jobName": "Job B",
+        "foreman": "Foreman C",
+        "description": "Description for incident 19",
+        "comment": "Comment for incident 19"
+    },
+    {
+        "datetime": "2024-01-02 21:20:53",
+        "severity": 4,
+        "cost": 1066.88,
+        "incidentKind": "Near Miss",
+        "jobName": "Job D",
+        "foreman": "Foreman B",
+        "description": "Description for incident 20",
+        "comment": "Comment for incident 20"
+    },
+    {
+        "datetime": "2024-01-05 12:49:36",
+        "severity": 3,
+        "cost": 2732.18,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job B",
+        "foreman": "Foreman A",
+        "description": "Description for incident 21",
+        "comment": "Comment for incident 21"
+    },
+    {
+        "datetime": "2024-01-06 12:17:36",
+        "severity": 3,
+        "cost": 2961.24,
+        "incidentKind": "Injury",
+        "jobName": "Job A",
+        "foreman": "Foreman A",
+        "description": "Description for incident 22",
+        "comment": "Comment for incident 22"
+    },
+    {
+        "datetime": "2024-01-05 05:57:52",
+        "severity": 5,
+        "cost": 2308.26,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job D",
+        "foreman": "Foreman D",
+        "description": "Description for incident 23",
+        "comment": "Comment for incident 23"
+    },
+    {
+        "datetime": "2024-01-06 09:35:07",
+        "severity": 5,
+        "cost": 183.21,
+        "incidentKind": "Injury",
+        "jobName": "Job E",
+        "foreman": "Foreman D",
+        "description": "Description for incident 24",
+        "comment": "Comment for incident 24"
+    },
+    {
+        "datetime": "2024-01-04 17:31:49",
+        "severity": 1,
+        "cost": 3522.26,
+        "incidentKind": "Good Catch",
+        "jobName": "Job B",
+        "foreman": "Foreman B",
+        "description": "Description for incident 25",
+        "comment": "Comment for incident 25"
+    },
+    {
+        "datetime": "2024-01-14 16:37:03",
+        "severity": 5,
+        "cost": 3797.02,
+        "incidentKind": "Good Catch",
+        "jobName": "Job A",
+        "foreman": "Foreman A",
+        "description": "Description for incident 26",
+        "comment": "Comment for incident 26"
+    },
+    {
+        "datetime": "2024-01-10 18:40:38",
+        "severity": 3,
+        "cost": 3641.6,
+        "incidentKind": "Good Catch",
+        "jobName": "Job B",
+        "foreman": "Foreman A",
+        "description": "Description for incident 27",
+        "comment": "Comment for incident 27"
+    },
+    {
+        "datetime": "2024-01-08 22:41:15",
+        "severity": 1,
+        "cost": 3488.83,
+        "incidentKind": "Good Catch",
+        "jobName": "Job B",
+        "foreman": "Foreman E",
+        "description": "Description for incident 28",
+        "comment": "Comment for incident 28"
+    },
+    {
+        "datetime": "2024-01-01 21:53:01",
+        "severity": 5,
+        "cost": 146.72,
+        "incidentKind": "Injury",
+        "jobName": "Job B",
+        "foreman": "Foreman C",
+        "description": "Description for incident 29",
+        "comment": "Comment for incident 29"
+    },
+    {
+        "datetime": "2024-01-12 04:23:48",
+        "severity": 3,
+        "cost": 2322.59,
+        "incidentKind": "Injury",
+        "jobName": "Job B",
+        "foreman": "Foreman A",
+        "description": "Description for incident 30",
+        "comment": "Comment for incident 30"
+    },
+    {
+        "datetime": "2024-01-08 23:34:19",
+        "severity": 3,
+        "cost": 1415.18,
+        "incidentKind": "Injury",
+        "jobName": "Job E",
+        "foreman": "Foreman C",
+        "description": "Description for incident 31",
+        "comment": "Comment for incident 31"
+    },
+    {
+        "datetime": "2024-01-01 13:25:08",
+        "severity": 5,
+        "cost": 668.73,
+        "incidentKind": "Near Miss",
+        "jobName": "Job D",
+        "foreman": "Foreman C",
+        "description": "Description for incident 32",
+        "comment": "Comment for incident 32"
+    },
+    {
+        "datetime": "2024-01-13 07:28:22",
+        "severity": 3,
+        "cost": 4100.39,
+        "incidentKind": "Damage",
+        "jobName": "Job D",
+        "foreman": "Foreman E",
+        "description": "Description for incident 33",
+        "comment": "Comment for incident 33"
+    },
+    {
+        "datetime": "2024-01-13 22:51:55",
+        "severity": 4,
+        "cost": 4387.25,
+        "incidentKind": "Injury",
+        "jobName": "Job C",
+        "foreman": "Foreman B",
+        "description": "Description for incident 34",
+        "comment": "Comment for incident 34"
+    },
+    {
+        "datetime": "2024-01-02 17:28:16",
+        "severity": 2,
+        "cost": 4861.19,
+        "incidentKind": "Injury",
+        "jobName": "Job A",
+        "foreman": "Foreman E",
+        "description": "Description for incident 35",
+        "comment": "Comment for incident 35"
+    },
+    {
+        "datetime": "2024-01-01 06:15:45",
+        "severity": 1,
+        "cost": 2011.22,
+        "incidentKind": "Good Catch",
+        "jobName": "Job E",
+        "foreman": "Foreman C",
+        "description": "Description for incident 36",
+        "comment": "Comment for incident 36"
+    },
+    {
+        "datetime": "2024-01-01 14:05:03",
+        "severity": 3,
+        "cost": 2703.71,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job D",
+        "foreman": "Foreman D",
+        "description": "Description for incident 37",
+        "comment": "Comment for incident 37"
+    },
+    {
+        "datetime": "2024-01-02 08:41:57",
+        "severity": 3,
+        "cost": 2088.39,
+        "incidentKind": "Injury",
+        "jobName": "Job A",
+        "foreman": "Foreman E",
+        "description": "Description for incident 38",
+        "comment": "Comment for incident 38"
+    },
+    {
+        "datetime": "2024-01-05 12:48:39",
+        "severity": 4,
+        "cost": 788.62,
+        "incidentKind": "Damage",
+        "jobName": "Job D",
+        "foreman": "Foreman A",
+        "description": "Description for incident 39",
+        "comment": "Comment for incident 39"
+    },
+    {
+        "datetime": "2024-01-06 02:52:33",
+        "severity": 4,
+        "cost": 4256.66,
+        "incidentKind": "Injury",
+        "jobName": "Job C",
+        "foreman": "Foreman C",
+        "description": "Description for incident 40",
+        "comment": "Comment for incident 40"
+    },
+    {
+        "datetime": "2024-01-05 05:50:35",
+        "severity": 4,
+        "cost": 2123.82,
+        "incidentKind": "Damage",
+        "jobName": "Job C",
+        "foreman": "Foreman A",
+        "description": "Description for incident 41",
+        "comment": "Comment for incident 41"
+    },
+    {
+        "datetime": "2024-01-07 10:00:58",
+        "severity": 1,
+        "cost": 1369.94,
+        "incidentKind": "Damage",
+        "jobName": "Job A",
+        "foreman": "Foreman E",
+        "description": "Description for incident 42",
+        "comment": "Comment for incident 42"
+    },
+    {
+        "datetime": "2024-01-11 18:07:10",
+        "severity": 5,
+        "cost": 303.34,
+        "incidentKind": "Good Catch",
+        "jobName": "Job B",
+        "foreman": "Foreman E",
+        "description": "Description for incident 43",
+        "comment": "Comment for incident 43"
+    },
+    {
+        "datetime": "2024-01-01 22:02:32",
+        "severity": 1,
+        "cost": 4530.82,
+        "incidentKind": "Injury",
+        "jobName": "Job D",
+        "foreman": "Foreman E",
+        "description": "Description for incident 44",
+        "comment": "Comment for incident 44"
+    },
+    {
+        "datetime": "2024-01-04 22:44:31",
+        "severity": 3,
+        "cost": 3992.14,
+        "incidentKind": "Damage",
+        "jobName": "Job C",
+        "foreman": "Foreman A",
+        "description": "Description for incident 45",
+        "comment": "Comment for incident 45"
+    },
+    {
+        "datetime": "2024-01-02 02:34:01",
+        "severity": 5,
+        "cost": 775.87,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job A",
+        "foreman": "Foreman B",
+        "description": "Description for incident 46",
+        "comment": "Comment for incident 46"
+    },
+    {
+        "datetime": "2024-01-09 00:49:56",
+        "severity": 4,
+        "cost": 2191.64,
+        "incidentKind": "Good Catch",
+        "jobName": "Job C",
+        "foreman": "Foreman B",
+        "description": "Description for incident 47",
+        "comment": "Comment for incident 47"
+    },
+    {
+        "datetime": "2024-01-02 22:34:32",
+        "severity": 1,
+        "cost": 1714.91,
+        "incidentKind": "Equipment Failure",
+        "jobName": "Job A",
+        "foreman": "Foreman C",
+        "description": "Description for incident 48",
+        "comment": "Comment for incident 48"
+    },
+    {
+        "datetime": "2024-01-05 04:50:18",
+        "severity": 4,
+        "cost": 4464.24,
+        "incidentKind": "Injury",
+        "jobName": "Job A",
+        "foreman": "Foreman A",
+        "description": "Description for incident 49",
+        "comment": "Comment for incident 49"
+    },
+    {
+        "datetime": "2024-01-05 09:26:32",
+        "severity": 1,
+        "cost": 691.98,
+        "incidentKind": "Good Catch",
+        "jobName": "Job C",
+        "foreman": "Foreman B",
+        "description": "Description for incident 50",
+        "comment": "Comment for incident 50"
+    }
+]
