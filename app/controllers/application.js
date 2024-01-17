@@ -2,7 +2,9 @@ import Controller from '@ember/controller';
 import { service } from '@ember/service';
 import { SAFETY_INCIDENT_CHARTS } from '../utils/constants';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 export default class ApplicationController extends Controller {
+  chartsDetails = SAFETY_INCIDENT_CHARTS;
   @service('chart-info-constructor') chart;
   @tracked incidents = [];
   @tracked options = {
@@ -22,15 +24,20 @@ export default class ApplicationController extends Controller {
       },
     ],
   };
-  @tracked chartID = 0;
+  @tracked chartID = 1;
   @tracked chartDescription = 0;
   async init() {
     super.init(...arguments);
     await this.loadData();
-    const currentChartId = 2;
+    this.generateNewChart();
+  }
+
+  // this can be refactored further and optimized
+  generateNewChart() {
     let chartMetaDetails = {};
     let chartData = {};
-    switch (currentChartId) {
+    let currentChartId = parseInt(this.chartID);
+    switch(currentChartId) {
       case 1:
         chartData = this.chart.countOccurrences(this.incidents, 'severity');
         chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
@@ -43,7 +50,6 @@ export default class ApplicationController extends Controller {
           Object.keys(chartData),
           Object.values(chartData),
         );
-        this.chartID = currentChartId;
         this.chartDescription = chartMetaDetails.chartDescription;
         // console.log(this.options);
         break;
@@ -53,12 +59,14 @@ export default class ApplicationController extends Controller {
           (obj) => obj.id === currentChartId,
         );
         chartData = Object.entries(chartData).map(([name, value]) => ({
-            name,
-            value,
-          }));
-        this.options = this.chart.generatePieChartOptions(chartData, chartMetaDetails.chartName);
+          name,
+          value,
+        }));
+        this.options = this.chart.generatePieChartOptions(
+          chartData,
+          chartMetaDetails.chartName,
+        );
         console.log(chartData);
-        this.chartID = currentChartId;
         this.chartDescription = chartMetaDetails.chartDescription;
         // const resultArray = Object.entries(incidentKindCounts).map(([name, value]) => ({
         //   name,
@@ -79,5 +87,17 @@ export default class ApplicationController extends Controller {
     } catch (error) {
       console.error('Error loading safety incidents:', error);
     }
+  }
+
+  @action
+  handleChartChange(event) {
+    // Access the selected value from the event
+    const selectedValue = event.target.value;
+
+    // Do something with the selected value, such as updating a property
+    this.set('chartID', selectedValue);
+    console.log(this.chartID);
+    this.generateNewChart();
+    // You can also perform other actions or logic here
   }
 }

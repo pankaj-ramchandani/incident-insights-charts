@@ -2,7 +2,11 @@
 {{!-- {{log this.incidents}} --}}
 {{!-- {{log this.options}} --}}
 <div class="dashboard">
-
+<select {{on "change" this.handleChartChange}}>
+    {{#each this.chartsDetails  as |chartDetails|}}
+    <option value={{chartDetails.id}}>{{chartDetails.chartName}}</option>
+    {{/each}}
+</select>
 {{safety-incident-charts options=this.options chartID=this.chartID}}
 {{{this.chartDescription}}}
 </div>
