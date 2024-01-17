@@ -35,14 +35,23 @@ export default class ChartInfoConstructorService extends Service {
     };
   }
 
-  generatePieChartOptions(chartData, chartName){
+  generatePieChartOptions(chartData, chartName) {
     return {
+      xAxis: {
+        type: 'category',
+        data: [],
+        name: '',
+      },
+      yAxis: {
+        type: 'value',
+        name: '',
+      },
       tooltip: {
-        trigger: 'item'
+        trigger: 'item',
       },
       legend: {
         top: '5%',
-        left: 'center'
+        left: 'center',
       },
       series: [
         {
@@ -53,25 +62,25 @@ export default class ChartInfoConstructorService extends Service {
           itemStyle: {
             borderRadius: 10,
             borderColor: '#fff',
-            borderWidth: 2
+            borderWidth: 2,
           },
           label: {
             show: false,
-            position: 'center'
+            position: 'center',
           },
           emphasis: {
             label: {
               show: true,
               fontSize: 40,
-              fontWeight: 'bold'
-            }
+              fontWeight: 'bold',
+            },
           },
           labelLine: {
-            show: false
+            show: false,
           },
-          data: chartData
-        }
-      ]
+          data: chartData,
+        },
+      ],
     };
   }
 }
