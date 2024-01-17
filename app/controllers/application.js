@@ -1,25 +1,28 @@
 import Controller from '@ember/controller';
 import { service } from '@ember/service';
 import { SAFETY_INCIDENT_CHARTS } from '../utils/constants';
+import { tracked } from '@glimmer/tracking';
 export default class ApplicationController extends Controller {
   @service('chart-info-constructor') chart;
-  incidents = [];
-  options = {
+  @tracked incidents = [];
+  @tracked options = {
     xAxis: {
       type: 'category',
-      data: ['1 Jan', '2 Jan', '3 Jan', '4 Jan', '5 Jan', '6 Jan', '7 Jan'],
-      name: 'Dates',
+      data: ['1', '2', '3', '4', '5'],
+      name: 'Severity Level',
     },
     yAxis: {
       type: 'value',
-      name: 'Costing',
+      name: 'No. of Incidents',
     },
     series: [
       {
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        data: [15, 5, 11, 9, 10],
         type: 'bar',
       },
-    ],};
+    ],
+  };
+  @tracked chartID = 0;
 
   async init() {
     super.init(...arguments);
@@ -36,6 +39,7 @@ export default class ApplicationController extends Controller {
       Object.keys(datasets),
       Object.values(datasets),
     );
+    this.chartID = currentChartId;
     console.log(this.options);
   }
 
