@@ -3,13 +3,7 @@ export const RESOURCE_TYPE_BAR_CHART = 2;
 export const RESOURCE_TYPE_PIE_CHART = 3;
 
 export const CHART_TABLE_MAPPINGS = [
-  {
-    id: 1,
-    resourceName: 'Incidents Logs',
-    resourceId: RESOURCE_TYPE_TABLE,
-    resourceDescription: '',
-  },
-  {
+    {
     id: 2,
     resourceName: 'Incident Severity Distribution',
     resourceId: RESOURCE_TYPE_BAR_CHART,
@@ -45,4 +39,10 @@ export const CHART_TABLE_MAPPINGS = [
                     Note: The chart can be customized to include additional details, such as time intervals, specific incident types, or other relevant factors based on the dataset and reporting requirements.
 `,
   },
+  {
+    id: 4,
+    resourceName: 'Incidents Logs',
+    resourceId: RESOURCE_TYPE_TABLE,
+    resourceDescription: '',
+  }
 ];
