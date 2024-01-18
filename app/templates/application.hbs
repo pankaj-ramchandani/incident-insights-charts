@@ -4,9 +4,15 @@
 <div class="dashboard">
 <select {{on "change" this.handleChartChange}}>
     {{#each this.chartsDetails  as |chartDetails|}}
-    <option value={{chartDetails.id}}>{{chartDetails.chartName}}</option>
+    <option value={{chartDetails.id}}>{{chartDetails.resourceName}}</option>
     {{/each}}
 </select>
+{{log this.resourceType this.resourceTypeTable}}
+{{#if (is-equal this.resourceType this.resourceTypeTable)}}
+{{table-comp column=this.columns content=this.incidents}}
+{{else}}
 {{safety-incident-charts options=this.options chartID=this.chartID}}
-{{{this.chartDescription}}}
+{{{this.resourceDescription}}}
+
+{{/if}}
 </div>

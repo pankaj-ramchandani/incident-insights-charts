@@ -10,7 +10,7 @@ export default class ChartInfoConstructorService extends Service {
   }
 
   generateBarChartOptions(
-    chartType,
+    resourceType,
     xAxisLabel,
     yAxisLabel,
     xAxisData,
@@ -29,13 +29,13 @@ export default class ChartInfoConstructorService extends Service {
       series: [
         {
           data: yAxisData,
-          type: chartType,
+          type: 'bar',
         },
       ],
     };
   }
 
-  generatePieChartOptions(chartData, chartName) {
+  generatePieChartOptions(chartData, resourceName) {
     return {
       xAxis: {
         type: 'category',
@@ -55,7 +55,7 @@ export default class ChartInfoConstructorService extends Service {
       },
       series: [
         {
-          name: chartName,
+          name: resourceName,
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,

@@ -1,31 +1,34 @@
 import Controller from '@ember/controller';
 import { service } from '@ember/service';
-import { SAFETY_INCIDENT_CHARTS } from '../utils/constants';
+import {
+  RESOURCE_TYPE_TABLE,
+  RESOURCE_TYPE_BAR_CHART,
+  RESOURCE_TYPE_PIE_CHART,
+  CHART_TABLE_MAPPINGS,
+} from '../utils/constants';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 export default class ApplicationController extends Controller {
-  chartsDetails = SAFETY_INCIDENT_CHARTS;
+  chartsDetails = CHART_TABLE_MAPPINGS;
   @service('chart-info-constructor') chart;
+  resourceTypeTable = RESOURCE_TYPE_TABLE;
+  @tracked chartID = 2;
+  @tracked resourceType = 2;
   @tracked incidents = [];
-  @tracked options = {
-    xAxis: {
-      type: 'category',
-      data: ['1', '2', '3', '4', '5'],
-      name: 'Severity Level',
-    },
-    yAxis: {
-      type: 'value',
-      name: 'No. of Incidents',
-    },
-    series: [
-      {
-        data: [15, 5, 11, 9, 10],
-        type: 'bar',
-      },
-    ],
-  };
-  @tracked chartID = 1;
-  @tracked chartDescription = 0;
+  @tracked options = {};
+  @tracked content = [];
+  @tracked rows = [];
+  @tracked resourceDescription = '';
+  columns = [
+    { name: 'datetime', label: 'Datetime' },
+    { name: 'severity', label: 'Severity' },
+    { name: 'cost', label: 'Cost' },
+    { name: 'incidentKind', label: 'Incident Kind' },
+    { name: 'jobName', label: 'Job Name' },
+    { name: 'foreman', label: 'Foreman' },
+    { name: 'description', label: 'Description' },
+    { name: 'comment', label: 'Comment' },
+  ];
   async init() {
     super.init(...arguments);
     await this.loadData();
@@ -37,37 +40,38 @@ export default class ApplicationController extends Controller {
     let chartMetaDetails = {};
     let chartData = {};
     let currentChartId = parseInt(this.chartID);
-    switch(currentChartId) {
+    chartMetaDetails = CHART_TABLE_MAPPINGS.find(
+      (obj) => obj.id === currentChartId,
+    );
+    this.resourceType = chartMetaDetails.resourceId;
+    switch (this.resourceType) {
       case 1:
+        break;
+      case RESOURCE_TYPE_BAR_CHART:
         chartData = this.chart.countOccurrences(this.incidents, 'severity');
-        chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
-          (obj) => obj.id === currentChartId,
-        );
         this.options = this.chart.generateBarChartOptions(
-          chartMetaDetails.chartType,
+          chartMetaDetails.resourceType,
           chartMetaDetails.xAxisLabel,
           chartMetaDetails.yAxisLabel,
           Object.keys(chartData),
           Object.values(chartData),
         );
-        this.chartDescription = chartMetaDetails.chartDescription;
+        this.resourceDescription = chartMetaDetails.resourceDescription;
         // console.log(this.options);
         break;
-      case 2:
+      case RESOURCE_TYPE_PIE_CHART:
         chartData = this.chart.countOccurrences(this.incidents, 'incidentKind');
-        chartMetaDetails = SAFETY_INCIDENT_CHARTS.find(
-          (obj) => obj.id === currentChartId,
-        );
+
         chartData = Object.entries(chartData).map(([name, value]) => ({
           name,
           value,
         }));
         this.options = this.chart.generatePieChartOptions(
           chartData,
-          chartMetaDetails.chartName,
+          chartMetaDetails.resourceName,
         );
         console.log(chartData);
-        this.chartDescription = chartMetaDetails.chartDescription;
+        this.resourceDescription = chartMetaDetails.resourceDescription;
         // const resultArray = Object.entries(incidentKindCounts).map(([name, value]) => ({
         //   name,
         //   value,

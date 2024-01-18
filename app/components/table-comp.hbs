@@ -1,0 +1,18 @@
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            {{#each this.columns as |column|}}
+              <th>{{column.label}}</th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+      {{#each this.content as |row|}}
+        <tr>
+            {{#each this.columns as |column|}}
+              <td>{{get row column.name}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

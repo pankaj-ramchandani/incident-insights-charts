@@ -1,3 +1,7 @@
 import Component from '@ember/component';
-
-export default Component.extend({});
+import {
+    RESOURCE_TYPE_TABLE
+  } from '../utils/constants';
+export default Component.extend({
+    resourceTypeTable: RESOURCE_TYPE_TABLE
+});

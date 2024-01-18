@@ -1,19 +1,19 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #90c8df;
+body {
+  background-color: #90c8df;
 }
 
-.dashboard{
-    background-color: #ddd;
-    width: 90%;
-    margin: 20px auto;
-    padding: 40px;
-    box-shadow: #333 5px 10px 10px;
+.dashboard {
+  background-color: #ddd;
+  width: 90%;
+  margin: 20px auto;
+  padding: 40px;
+  box-shadow: #333 5px 10px 10px;
 }
