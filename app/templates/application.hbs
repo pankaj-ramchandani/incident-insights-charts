@@ -2,17 +2,16 @@
 {{!-- {{log this.incidents}} --}}
 {{!-- {{log this.options}} --}}
 <div class="dashboard">
+{{#if this.isDataLoaded}}
+{{table-comp column=this.column content=this.incidents}}
+{{/if}}
+<br><h2>Charts for Overall Report</h2><br>
 <select {{on "change" this.handleChartChange}}>
     {{#each this.chartsDetails  as |chartDetails|}}
     <option value={{chartDetails.id}}>{{chartDetails.resourceName}}</option>
     {{/each}}
 </select>
-{{log this.resourceType this.resourceTypeTable}}
-{{#if (is-equal this.resourceType this.resourceTypeTable)}}
-{{table-comp column=this.columns content=this.incidents}}
-{{else}}
 {{safety-incident-charts options=this.options chartID=this.chartID}}
 {{{this.resourceDescription}}}
 
-{{/if}}
 </div>

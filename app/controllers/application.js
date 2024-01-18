@@ -4,12 +4,13 @@ import {
   RESOURCE_TYPE_TABLE,
   RESOURCE_TYPE_BAR_CHART,
   RESOURCE_TYPE_PIE_CHART,
-  CHART_TABLE_MAPPINGS,
+  CHART_MAPPINGS,
 } from '../utils/constants';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 export default class ApplicationController extends Controller {
-  chartsDetails = CHART_TABLE_MAPPINGS;
+  chartsDetails = CHART_MAPPINGS;
+  @tracked isDataLoaded = false;
   @service('chart-info-constructor') chart;
   resourceTypeTable = RESOURCE_TYPE_TABLE;
   @tracked chartID = 2;
@@ -40,9 +41,7 @@ export default class ApplicationController extends Controller {
     let chartMetaDetails = {};
     let chartData = {};
     let currentChartId = parseInt(this.chartID);
-    chartMetaDetails = CHART_TABLE_MAPPINGS.find(
-      (obj) => obj.id === currentChartId,
-    );
+    chartMetaDetails = CHART_MAPPINGS.find((obj) => obj.id === currentChartId);
     this.resourceType = chartMetaDetails.resourceId;
     switch (this.resourceType) {
       case 1:
@@ -88,11 +87,12 @@ export default class ApplicationController extends Controller {
       const incidents = await fetch(url);
       const incidentsRes = await incidents.json();
       this.set('incidents', incidentsRes);
+      this.set('isDataLoaded', true);
     } catch (error) {
       console.error('Error loading safety incidents:', error);
     }
   }
-
+  
   @action
   handleChartChange(event) {
     // Access the selected value from the event
